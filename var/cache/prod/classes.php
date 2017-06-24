@@ -5681,11 +5681,11 @@ namespace
 {
 class Twig_Environment
 {
-const VERSION ='1.34.2';
-const VERSION_ID = 13402;
+const VERSION ='1.34.3';
+const VERSION_ID = 13403;
 const MAJOR_VERSION = 1;
 const MINOR_VERSION = 34;
-const RELEASE_VERSION = 2;
+const RELEASE_VERSION = 3;
 const EXTRA_VERSION ='';
 protected $charset;
 protected $loader;
@@ -6518,7 +6518,6 @@ class_alias('Twig_Environment','Twig\Environment', false);
 }
 namespace
 {
-class_exists('Twig_Environment');
 interface Twig_ExtensionInterface
 {
 public function initRuntime(Twig_Environment $environment);
@@ -6532,10 +6531,10 @@ public function getGlobals();
 public function getName();
 }
 class_alias('Twig_ExtensionInterface','Twig\Extension\ExtensionInterface', false);
+class_exists('Twig_Environment');
 }
 namespace
 {
-class_exists('Twig_Environment');
 abstract class Twig_Extension implements Twig_ExtensionInterface
 {
 public function initRuntime(Twig_Environment $environment)
@@ -6575,6 +6574,7 @@ return get_class($this);
 }
 }
 class_alias('Twig_Extension','Twig\Extension\AbstractExtension', false);
+class_exists('Twig_Environment');
 }
 namespace
 {

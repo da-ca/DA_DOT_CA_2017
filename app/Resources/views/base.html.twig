@@ -5,9 +5,69 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+        <!-- Google fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Cookie" rel="stylesheet" type="text/css">
+        
+        <!-- Preloader stylesheet -->
+        <link rel="stylesheet" href="css/preloader.css">		
+        
+        <!-- RS5.0 Main stylesheet -->
+        <link rel="stylesheet" type="text/css" href="revolution/css/settings.css">		 
+        <!-- RS5.0 navigation styles -->
+        <link rel="stylesheet" type="text/css" href="revolution/css/navigation.css">
+        
+        <!-- Bootstrap v3.3.6 stylesheet -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+        
+        <!-- Portfolio stylesheet -->
+        <link rel="stylesheet" href="portfolio/css/portfolio.css">
+        
+        <!-- UX theme stylesheet -->
+        <link rel="stylesheet" href="css/theme.css">
+
+
+        
+
+        <!-- javascript/jQuery files are linked here -->
+        <script src="js/vendor/jquery.js"></script>
+        <script src="js/vendor/bootstrap.js"></script>
+        <script src="js/hover-dropdown.js"></script>
+        <script src="js/smooth-scroll.js"></script>
+        <script src="js/appear.js"></script>
+        <script src="js/retina.js"></script>
+        <script src="js/parallax.js"></script>
+        <script src="js/scrollbar.js"></script>
+        <script src="js/classie.js"></script>
+        <script src="js/selectik.js"></script>
+        <script src="js/icheck.js"></script>
+        <script src="js/spinedit.js"></script>
+        <script src="js/ux-field.js"></script>
+        <script src="js/carousel.js"></script>
+        <script src="js/popup.js"></script>
+        <script src="js/ajaxchimp.js"></script>
+        <script src="js/tabs.js"></script>
+        <script src="revolution/js/jquery.themepunch.tools.min.js?rev=5.0"></script>
+        <script src="revolution/js/jquery.themepunch.revolution.min.js?rev=5.0"></script>
+        <script src="portfolio/js/portfolio.js"></script>
+        <script src="js/vide.js"></script>
+        <script src="js/jflickrfeed.js"></script>
+        <script src="js/tweecool.js"></script>
+        <script src="js/fitvids.js"></script>
+        <script src="js/form.js"></script>
+        <script src="js/contact.js"></script>
+        <script src="js/validate.js"></script>
+        <script src="js/chart.js"></script>
+        <script src="js/main.js"></script>
+
     </head>
     <body>
         {% block body %}{% endblock %}
+        
+            
+
         {% block javascripts %}{% endblock %}
     </body>
 </html>

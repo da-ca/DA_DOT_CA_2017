@@ -1,76 +1,904 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-    <div id="wrapper">
-        <div id="container">
-            <div id="welcome">
-                <h1><span>Welcome to</span> Symfony {{ constant('Symfony\\Component\\HttpKernel\\Kernel::VERSION') }}</h1>
-            </div>
-
-            <div id="status">
-                <p>
-                    <svg id="icon-status" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z" fill="#759E1A"/></svg>
-
-                    Your application is now ready. You can start working on it at:
-                    <code>{{ base_dir }}</code>
-                </p>
-            </div>
-
-            <div id="next">
-                <h2>What's next?</h2>
-                <p>
-                    <svg id="icon-book" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="-12.5 9 64 64" enable-background="new -12.5 9 64 64" xml:space="preserve">
-                        <path fill="#AAA" d="M6.8,40.8c2.4,0.8,4.5-0.7,4.9-2.5c0.2-1.2-0.3-2.1-1.3-3.2l-0.8-0.8c-0.4-0.5-0.6-1.3-0.2-1.9
-                            c0.4-0.5,0.9-0.8,1.8-0.5c1.3,0.4,1.9,1.3,2.9,2.2c-0.4,1.4-0.7,2.9-0.9,4.2l-0.2,1c-0.7,4-1.3,6.2-2.7,7.5
-                            c-0.3,0.3-0.7,0.5-1.3,0.6c-0.3,0-0.4-0.3-0.4-0.3c0-0.3,0.2-0.3,0.3-0.4c0.2-0.1,0.5-0.3,0.4-0.8c0-0.7-0.6-1.3-1.3-1.3
-                            c-0.6,0-1.4,0.6-1.4,1.7s1,1.9,2.4,1.8c0.8,0,2.5-0.3,4.2-2.5c2-2.5,2.5-5.4,2.9-7.4l0.5-2.8c0.3,0,0.5,0.1,0.8,0.1
-                            c2.4,0.1,3.7-1.3,3.7-2.3c0-0.6-0.3-1.2-0.9-1.2c-0.4,0-0.8,0.3-1,0.8c-0.1,0.6,0.8,1.1,0.1,1.5c-0.5,0.3-1.4,0.6-2.7,0.4l0.3-1.3
-                            c0.5-2.6,1-5.7,3.2-5.8c0.2,0,0.8,0,0.8,0.4c0,0.2,0,0.2-0.2,0.5c-0.2,0.3-0.3,0.4-0.2,0.7c0,0.7,0.5,1.1,1.2,1.1
-                            c0.9,0,1.2-1,1.2-1.4c0-1.2-1.2-1.8-2.6-1.8c-1.5,0.1-2.8,0.9-3.7,2.1c-1.1,1.3-1.8,2.9-2.3,4.5c-0.9-0.8-1.6-1.8-3.1-2.3
-                            c-1.1-0.7-2.3-0.5-3.4,0.3c-0.5,0.4-0.8,1-1,1.6c-0.4,1.5,0.4,2.9,0.8,3.4l0.9,1c0.2,0.2,0.6,0.8,0.4,1.5c-0.3,0.8-1.2,1.3-2.1,1
-                            c-0.4-0.2-1-0.5-0.9-0.9c0.1-0.2,0.2-0.3,0.3-0.5s0.1-0.3,0.1-0.3c0.2-0.6-0.1-1.4-0.7-1.6c-0.6-0.2-1.2,0-1.3,0.8
-                            C4.3,38.4,4.7,40,6.8,40.8z M46.1,20.9c0-4.2-3.2-7.5-7.1-7.5h-3.8C34.8,10.8,32.7,9,30.2,9L-2.3,9.1c-2.8,0.1-4.9,2.4-4.9,5.4
-                            L-7,58.6c0,4.8,8.1,13.9,11.6,14.1l34.7-0.1c3.9,0,7-3.4,7-7.6L46.1,20.9z M-0.3,36.4c0-8.6,6.5-15.6,14.5-15.6
-                            c8,0,14.5,7,14.5,15.6S22.1,52,14.2,52C6.1,52-0.3,45-0.3,36.4z M42.1,65.1c0,1.8-1.5,3.1-3.1,3.1H4.6c-0.7,0-3-1.8-4.5-4.4h30.4
-                            c2.8,0,5-2.4,5-5.4V17.9h3.7c1.6,0,2.9,1.4,2.9,3.1V65.1L42.1,65.1z"/>
-                    </svg>
-
-                    Read the documentation to learn
-                    <a href="https://symfony.com/doc/{{ constant('Symfony\\Component\\HttpKernel\\Kernel::VERSION')[:3] }}/page_creation.html">
-                        How to create your first page in Symfony
-                    </a>
-                </p>
-            </div>
-
-        </div>
-    </div>
-{% endblock %}
 
 {% block stylesheets %}
-<style>
-    body { background: #F5F5F5; font: 18px/1.5 sans-serif; }
-    h1, h2 { line-height: 1.2; margin: 0 0 .5em; }
-    h1 { font-size: 36px; }
-    h2 { font-size: 21px; margin-bottom: 1em; }
-    p { margin: 0 0 1em 0; }
-    a { color: #0000F0; }
-    a:hover { text-decoration: none; }
-    code { background: #F5F5F5; max-width: 100px; padding: 2px 6px; word-wrap: break-word; }
-    #wrapper { background: #FFF; margin: 1em auto; max-width: 800px; width: 95%; }
-    #container { padding: 2em; }
-    #welcome, #status { margin-bottom: 2em; }
-    #welcome h1 span { display: block; font-size: 75%; }
-    #icon-status, #icon-book { float: left; height: 64px; margin-right: 1em; margin-top: -4px; width: 64px; }
-    #icon-book { display: none; }
-
-    @media (min-width: 768px) {
-        #wrapper { width: 80%; margin: 2em auto; }
-        #icon-book { display: inline-block; }
-        #status a, #next a { display: block; }
-
-        @-webkit-keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
-        @keyframes fade-in { 0% { opacity: 0; } 100% { opacity: 1; } }
-        .sf-toolbar { opacity: 0; -webkit-animation: fade-in 1s .2s forwards; animation: fade-in 1s .2s forwards;}
-    }
-</style>
+    
 {% endblock %}
+
+
+{% block body %}
+    <!-- preloader START -->
+	<div class="preloader">
+		<div class="spinner-wrap">
+			<div class="spinner"></div>
+			<span class="preloader-text">loading...</span>
+		</div>
+	</div>
+	<!-- preloader END -->
+
+
+	<!-- body wrapper START -->
+	<div class="body-wrapper row-offcanvas">
+		
+		<!--[if lt IE 8]>
+			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+		
+		
+		<!-- page header START -->
+		<header>
+			
+			<!-- main navigation START -->
+			<nav class="navbar navbar-inverse navbar-fixed-top mega-menu" role="navigation">
+			  <div class="container">
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+				  <a class="navbar-brand logo" href="./"><img src="img/logo.png" width="98" alt="Dream Arts"></a>
+				</div>
+				
+				<!-- extra navigatinon START -->
+				<ul class="nav navbar-nav navbar-right extra-nav">
+					<li>
+						<a href="contact.html" title="Contact Us">
+							<i style="color: #f19c16; font-size: 18px;" class="fa fa-envelope"></i>
+						</a>
+					</li>
+					<li class="hidden-xs">
+						<a class="nav-toggle" href="javascript:void(0)" data-toggle="offcanvas">
+							<span class="bars-wrapper">
+								<span class="first bar"></span>
+								<span class="second bar"></span>
+								<span class="third bar"></span>
+							</span>
+						</a>
+					</li>
+				</ul>
+				<!-- extra navigation END -->
+				
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right ux-hash-nav">
+						<!--dream arts-->
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dream Arts</a>
+							<ul class="dropdown-menu">
+								<li><a href="./about">About</a></li>
+								<li><a href="home-portfolio.html">Mission, Vision & Values</a></li>
+								<li><a href="home-personal.html">The Brochure</a></li>
+								<li role="separator" class="divider"></li>
+								<li class="submenu">
+									<a href="javascript:void(0);" title="link title">Already a Dreamer !</a>
+									<ul class="dropdown-menu">
+										<li><a href="javascript:void(0);">My DA BUCK$ (<small class="em text-info">coming soon</small>)</a></li>
+										<li><a href="javascript:void(0);">Make a Payment (<small class="em text-info">coming soon</small>)</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<!--end dream arts-->
+						<!--services -->
+						<li class="dropdown mega-element">
+							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Services & Pricing</a>
+							<ul class="dropdown-menu full-width" role="menu">
+								<li class="container">
+									<div class="row">
+										<div class="col-sm-6 col-lg-3">
+											<h3 class="nav-title">Web Development</h3>
+											<ul class="nav-list icons-list">
+												<li><i class="ti-text"></i><a href="typography.html" title="Typography">Websites</a></li>
+												<li><i class="ti-slice"></i><a href="elements.html" title="Elements">E-Commerce</a></li>
+												<li><i class="ti-direction"></i><a href="404.html" title="404 Error">Pricing</a></li>
+											</ul>
+										</div>
+										<div class="col-sm-6 col-lg-3">
+											<h3 class="nav-title">App Development</h3>
+											<ul class="nav-list icons-list">
+												<li><i class="ti-image"></i><a href="post-image.html" title="Image">Mobile Apps</a></li>
+												<li><i class="ti-control-play"></i><a href="post-video.html" title="Video">Desktop Apps</a></li>
+												<li><i class="ti-music-alt"></i><a href="post-audio.html" title="Audio">Pricing</a></li>
+											</ul>
+										</div>
+										<div class="col-sm-6 col-lg-3">
+											<h3 class="nav-title">Design</h3>
+											<ul class="nav-list icons-list">
+												<li><i class="ti-image"></i><a href="post-image.html" title="Image">Logo Design</a></li>
+												<li><i class="ti-control-play"></i><a href="post-video.html" title="Video">Graphic Design</a></li>
+												<li><i class="ti-music-alt"></i><a href="post-audio.html" title="Audio">Pricing</a></li>
+											</ul>
+										</div>
+										<div class="col-sm-6 col-lg-3">
+											<h3 class="nav-title">Videography</h3>
+											<ul class="nav-list icons-list">
+												<li><i class="ti-image"></i><a href="post-image.html" title="Image">Ideas & Story Boards</a></li>
+												<li><i class="ti-control-play"></i><a href="post-video.html" title="Video">Video for Business</a></li>
+												<li><i class="ti-music-alt"></i><a href="post-audio.html" title="Audio">Pricing</a></li>
+											</ul>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</li>
+						<!--end services-->
+						<!--work-->
+						<!--<li><a href="#ux-register">Work</a></li>-->
+						<!--end work-->
+						<!--Connect-->
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Connect</a>
+							<ul class="dropdown-menu">
+								<li><a href="home-portfolio.html">Things we do for Fun</a></li>
+								<li><a href="home-portfolio.html">Sharing is Caring</a></li>
+								<li><a href="home-personal.html">Affiliation</a></li>								
+							</ul>
+						</li>
+						<!--end connect-->
+						<li><a href="#ux-benefits">Careers</a></li>
+						<li><a href="#ux-testimonials">647.988.9448</a></li>
+					</ul>			
+				</div><!--/.navbar-collapse -->
+			  </div>
+			</nav>
+			<!-- main navigation END -->
+			
+			<!-- page title START -->
+			<div id="ux-intro" class="page-title ux-hero full-screen parallax" style="background-image:url(img/bg/landing-bg.jpg);">
+				<div class="title-body">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-12">
+								<a href="https://vimeo.com/221619219" title="MADE IN DREAM ARTS" class="mfp-iframe lightbox play-it" data-toggle="tooltip" title="BY DREAM ARTS TEAM"><i class="fa fa-play"></i></a>
+								<!--<a href="http://www.youtube.com/watch?v=kuceVNBTJio" class="mfp-iframe lightbox play-it" data-toggle="tooltip" title="Watch an intro video"><i class="fa fa-play"></i></a>-->
+								<h1 class="title-xl"><em class="text-light">Recent Case Study</em> <strong class="text-info">Watch it <span class="text-uppercase text-success check-after">now</span></strong></h1>
+								<p class="title-text">Receive your free customized online Quote</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<a href="#page-content" class="btn btn-circle bounce page-scroll">
+					<i class="ti-arrow-down"></i>
+				</a>
+			</div>
+			<!-- page title END -->
+			
+		</header>
+		<!-- page header END -->
+		
+		<!-- page content START -->
+		<div class="page-content" id="page-content">			
+			
+			<!-- why register START -->
+			<div id="ux-register" class="section half-section-right">
+				<div class="section-bg hidden-xxs img-bg" data-bg="img/half-section-bg/right-img-3.jpg">&nbsp;</div>
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-4 col-lg-offset-1 col-sm-5 hidden-xs">
+							<h2 class="h1">Why Choose Us</h2>
+							<p><mark>100% Transparency.  No wizard behind the curtain</mark></p>
+							<ul class="custom-list icon-list">
+								<li>
+									<i class="ti-check"></i>
+									Experienced, Creative & Technical
+								</li>
+								<li>
+									<i class="ti-check"></i>
+									Always seeking originality
+								</li>
+								<li>
+									<i class="ti-check"></i>
+									You Talk, We Listen
+								</li>
+								<li>
+									<i class="ti-check"></i>
+									We Deliver On Time
+								</li>
+							</ul>
+							<p><a href="#featured-projects" class="btn btn-info ux-btn btn-semi-rounded page-scroll" title="Check out our work"><span>Check out our work</span><i class="ti-arrow-right"></i></a></p>
+						</div>
+						<div class="col-lg-5 col-lg-offset-1 col-md-6 col-sm-7 col-sm-offset-0 col-xs-8 col-xs-offset-2 xxs-block">
+							<div class="form-wrapper">
+								<form>
+									<fieldset>									
+										<legend>Get your free online quote</legend>					
+										<div class="ux-input">
+											<input class="ux-field" type="text" name="name" id="name" required />
+											<label class="ux-label" for="name">
+												<span class="ux-label-content">Name</span>
+											</label>
+										</div>
+										<div class="ux-input">
+											<input class="ux-field" type="email" name="email" id="email" required />
+											<label class="ux-label" for="email">
+												<span class="ux-label-content">Email</span>
+											</label>
+										</div>
+										<div class="ux-input">
+											<input class="ux-field" type="text" name="phone" id="phone" required />
+											<label class="ux-label" for="phone">
+												<span class="ux-label-content">Phone #</span>
+											</label>
+										</div>
+										<div class="form-group">
+											<button type="submit" class="btn btn-primary ux-btn btn-rounded pull-right">Start</button>
+										</div>							
+									</fieldset>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- why register END -->		
+			
+			<!--featured projects-->
+			<div id="featured-projects" class="section img-bg parallax" style="background-image:url(img/bg/bg13.jpg);">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							<a href="home-portfolio.html" class="btn btn-success ux-btn btn-rounded btn-sm pull-right hidden-xs" title="More projects from Dream Arts"><span>Click for more</span><i class="ti-arrow-right"></i></a>
+							<h3 class="page-header">Some of Our Portfolio Work</h3>
+						</div>
+					</div>
+				</div>
+				
+				<!-- featured projects START -->
+				<div id="portfolio-wrapper" class="portfolio-wrapper cbp cbp-l-grid-mosaic-projects">
+				
+					<!-- project 1 START -->
+					<div class="cbp-item design front-end">
+						<div class="cbp-caption">
+							<div class="cbp-caption-defaultWrap">
+								<img src="img/portfolio/p1-thumb.jpg" alt="project one" width="480" height="356">
+							</div>
+							<div class="cbp-caption-activeWrap">
+								<div class="cbp-l-caption-alignCenter">
+									<div class="cbp-l-caption-body">
+										<a href="project1.html" class="cbp-l-caption-buttonLeft" rel="nofollow">project details</a>
+										<a href="http://www.youtube.com/watch?v=kuceVNBTJio" class="cbp-lightbox cbp-l-caption-buttonRight" data-title="ARCHITECTURE - Archi Sign">view larger</a>
+									</div>
+								</div>
+							</div>
+							<h2 class="project-title">ARCHITECTURE - Archi Sign</h2>
+							<a href="javascript:void(0);" class="love-it" title="Love It!"><i class="fa fa-heart-o"></i><span>Dream Arts</span></a>
+						</div>
+					</div>
+					<!-- project 1 END -->
+				
+					<!-- project 2 START -->
+					<div class="cbp-item wordpress front-end">
+						<div class="cbp-caption">
+							<div class="cbp-caption-defaultWrap">
+								<img src="img/portfolio/p2-thumb.jpg" alt="project two" width="480" height="356">
+							</div>
+							<div class="cbp-caption-activeWrap">
+								<div class="cbp-l-caption-alignCenter">
+									<div class="cbp-l-caption-body">
+										<a href="project1.html" class="cbp-l-caption-buttonLeft" rel="nofollow">project details</a>
+										<a href="img/portfolio/p2.jpg" class="cbp-lightbox cbp-l-caption-buttonRight" data-title="FASHION - Wings of Freedom">view larger</a>
+									</div>
+								</div>
+							</div>
+							<h2 class="project-title">FASHION - Wings of Freedom</h2>
+							<a href="javascript:void(0);" class="love-it" title="Love It!"><i class="fa fa-heart-o"></i><span>Dream Arts</span></a>
+						</div>
+					</div>
+					<!-- project 2 END -->
+				
+					<!-- project 3 START -->
+					<div class="cbp-item wordpress front-end">
+						<div class="cbp-caption">
+							<div class="cbp-caption-defaultWrap">
+								<img src="img/portfolio/p3-thumb.jpg" alt="project three" width="480" height="356">
+							</div>
+							<div class="cbp-caption-activeWrap">
+								<div class="cbp-l-caption-alignCenter">
+									<div class="cbp-l-caption-body">
+										<a href="project1.html" class="cbp-l-caption-buttonLeft" rel="nofollow">project details</a>
+										<a href="https://vimeo.com/222104843" class="cbp-lightbox cbp-l-caption-buttonRight" data-title="Logo design by Dream Arts">view larger</a>
+									</div>
+								</div>
+							</div>
+							<h2 class="project-title">Logo Design - Le Saphir</h2>
+							<a href="javascript:void(0);" class="love-it" title="Love It!"><i class="fa fa-heart-o"></i><span>Dream Arts</span></a>
+						</div>
+					</div>
+					<!-- project 3 END -->
+				
+					<!-- project 4 START -->
+					<div class="cbp-item wordpress front-end">
+						<div class="cbp-caption">
+							<div class="cbp-caption-defaultWrap">
+								<img src="img/portfolio/p4-thumb.jpg" alt="project three" width="480" height="356">
+							</div>
+							<div class="cbp-caption-activeWrap">
+								<div class="cbp-l-caption-alignCenter">
+									<div class="cbp-l-caption-body">
+										<a href="project1.html" class="cbp-l-caption-buttonLeft" rel="nofollow">project details</a>
+										<a href="https://vimeo.com/222463409" class="cbp-lightbox cbp-l-caption-buttonRight" data-title="Teaser Ad - Storyboard & Montage">view larger</a>
+									</div>
+								</div>
+							</div>
+							<h2 class="project-title">Teaser Ad</h2>
+							<a href="javascript:void(0);" class="love-it" title="Love It!"><i class="fa fa-heart-o"></i><span>Dream Arts</span></a>
+						</div>
+					</div>
+					<!-- project 4 END -->
+					
+					<!-- project 5 START -->
+					<div class="cbp-item design front-end">
+						<div class="cbp-caption">
+							<div class="cbp-caption-defaultWrap">
+								<img src="img/portfolio/p5-thumb.jpg" alt="project three" width="480" height="356">
+							</div>
+							<div class="cbp-caption-activeWrap">
+								<div class="cbp-l-caption-alignCenter">
+									<div class="cbp-l-caption-body">
+										<a href="project1.html" class="cbp-l-caption-buttonLeft" rel="nofollow">project details</a>
+										<a href="img/portfolio/p5.jpg" class="cbp-lightbox cbp-l-caption-buttonRight" data-title="Restaurant - Photography">view larger</a>
+									</div>
+								</div>
+							</div>
+							<h2 class="project-title">Restaurant - Photography</h2>
+							<a href="javascript:void(0);" class="love-it" title="Love It!"><i class="fa fa-heart-o"></i><span>Dream Arts</span></a>
+						</div>
+					</div>
+					<!-- project 5 END -->
+				
+					<!-- project 6 START -->
+					<div class="cbp-item mobile design">
+						<div class="cbp-caption">
+							<div class="cbp-caption-defaultWrap">
+								<img src="img/portfolio/p6-thumb.jpg" alt="project three" width="480" height="356">
+							</div>
+							<div class="cbp-caption-activeWrap">
+								<div class="cbp-l-caption-alignCenter">
+									<div class="cbp-l-caption-body">
+										<a href="project1.html" class="cbp-l-caption-buttonLeft" rel="nofollow">project details</a>
+										<a href="img/portfolio/p6.jpg" class="cbp-lightbox cbp-l-caption-buttonRight" data-title="An other random project with long title">view larger</a>
+									</div>
+								</div>
+							</div>
+							<h2 class="project-title">Dental Clinic Website</h2>
+							<a href="javascript:void(0);" class="love-it" title="Love It!"><i class="fa fa-heart-o"></i><span>Dream Arts</span></a>
+						</div>
+					</div>
+					<!-- project 6 END -->
+				
+					<!-- project 7 START -->
+					<div class="cbp-item wordpress design">
+						<div class="cbp-caption">
+							<div class="cbp-caption-defaultWrap">
+								<img src="img/portfolio/p7-thumb.jpg" alt="project three" width="480" height="356">
+							</div>
+							<div class="cbp-caption-activeWrap">
+								<div class="cbp-l-caption-alignCenter">
+									<div class="cbp-l-caption-body">
+										<a href="project1.html" class="cbp-l-caption-buttonLeft" rel="nofollow">project details</a>
+										<a href="img/portfolio/p7.jpg" class="cbp-lightbox cbp-l-caption-buttonRight" data-title="Story Telling - Videography">view larger</a>
+									</div>
+								</div>
+							</div>
+							<h2 class="project-title">Story Telling - Videography</h2>
+							<a href="javascript:void(0);" class="love-it" title="Love It!"><i class="fa fa-heart-o"></i><span>Dream Arts</span></a>
+						</div>
+					</div>
+					<!-- project 7 END -->
+				
+					<!-- project 8 START -->
+					<div class="cbp-item wordpress design front-end">
+						<div class="cbp-caption">
+							<div class="cbp-caption-defaultWrap">
+								<img src="img/portfolio/p8-thumb.jpg" alt="project three" width="480" height="356">
+							</div>
+							<div class="cbp-caption-activeWrap">
+								<div class="cbp-l-caption-alignCenter">
+									<div class="cbp-l-caption-body">
+										<a href="project1.html" class="cbp-l-caption-buttonLeft" rel="nofollow">project details</a>
+										<a href="img/portfolio/p8.jpg" class="cbp-lightbox cbp-l-caption-buttonRight" data-title="UX creative portfolio theme">view larger</a>
+									</div>
+								</div>
+							</div>
+							<h2 class="project-title">Architectural 3D</h2>
+							<a href="javascript:void(0);" class="love-it" title="Love It!"><i class="fa fa-heart-o"></i><span>Dream Arts</span></a>
+						</div>
+					</div>
+					<!-- project 8 END -->
+				
+					<!-- project 9 START -->
+					<div class="cbp-item wordpress front-end">
+						<div class="cbp-caption">
+							<div class="cbp-caption-defaultWrap">
+								<img src="img/portfolio/p9-thumb.jpg" alt="project three" width="480" height="356">
+							</div>
+							<div class="cbp-caption-activeWrap">
+								<div class="cbp-l-caption-alignCenter">
+									<div class="cbp-l-caption-body">
+										<a href="project1.html" class="cbp-l-caption-buttonLeft" rel="nofollow">project details</a>
+										<a href="https://vimeo.com/222104866" class="cbp-lightbox cbp-l-caption-buttonRight" data-title="Video Commercial - Travel agency">view larger</a>
+									</div>
+								</div>
+							</div>
+							<h2 class="project-title">Video Commercial - Travel agency</h2>
+							<a href="javascript:void(0);" class="love-it" title="Love It!"><i class="fa fa-heart-o"></i><span>Dream Arts</span></a>
+						</div>
+					</div>
+					<!-- project 9 END -->
+					
+				</div>
+				<!-- featured projects END -->
+				
+			</div>
+			<!--end featured projects-->
+
+			<!-- project with case study START -->
+			<div class="section">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<figure class="text-center">
+								<img src="img/brochure/dreamarts_einstein_gioconda.png" alt="Dream Arts Einstein Gioconda Brochure">
+								<figcaption class="sr-only">Dream Arts Brochure</figcaption>
+							</figure>
+						</div>
+						<div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-0 col-lg-5">
+							<h2>Dream Arts Brochure</h2>
+							<h5><span class="em text-success">The sky isn't the limit… You Are</span></h5>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi purus libero, faucibus adipiscing, commodo quisst. Sed lectus. Vestibulum volutpat ultrices sagittis euismod dui pulvinar. Phase llus  dapibus eu, fermentum, dapus sedurna.</p>
+							<a target="_blank" href="project4.html" download class="btn btn-danger ux-btn btn-rounded" title="View Dream Arts Brochure"><span>Download Brochure</span><i class="ti-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- project with case study END -->
+			
+			<!-- Services -->
+			<div class="section dark-bg half-section-left">
+				<div class="section-bg img-bg hidden-xs" data-bg="img/half-section-bg/right-img-1.jpg">&nbsp;</div>
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-7 col-sm-offset-5 col-lg-6 col-lg-offset-6">
+							<div class="overlay">
+								
+								<h2 class="text-center section-header visible-xs">Services</h2>
+								
+								<div class="icon-box-4">
+									<i class="number">1</i>
+									<h4 class="box-title">Web Development <br><small><span class="em text-primary">Preliminary Interviewing</span></small></h4>
+									<p>At this stage an initial inverview is conducted with client in a cofee meeting. Project requirements are analyzed and scope is defined. At this stage a great envolvment of client is required to get an exact idea of the project.</p>
+								</div>
+								<div class="icon-box-4">
+									<i class="number">2</i>
+									<h4 class="box-title">Mobile Development <br><small><span class="em text-primary">Creative Phase</span></small></h4>
+									<p>This phase is further divided into to steps, 1st one is to create initial mockups and present it to client for initial approval. At 2nd step ideas are converted into a real world creative design, covering all aspects of the project.</p>
+								</div>
+								<div class="icon-box-4">
+									<i class="number">3</i>
+									<h4 class="box-title">Design <br><small><span class="em text-primary">Giving Life to Ideas</span></small></h4>
+									<p>At this step entire project is devided into several modules and handed over to development team. This step envolves a repeated process of coding and initial testing of modules and finally all modules are integrated.</p>
+								</div>
+								<div class="icon-box-4">
+									<i class="number">4</i>
+									<h4 class="box-title">Videography <br><small><span class="em text-primary">No Compromise with Quality</span></small></h4>
+									<p>Quality assurance is the most important step in our development process. We do comparison with original design, optimize images, proof read all content, test menu, links & forms, and cross browser compatibility.</p>
+								</div>
+								
+							</div>				
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Services -->
+
+			<!-- Technologies -->
+			<div id="ux-clients" class="section gray-bg">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12">
+							<h2 class="text-center section-header">Technologies We Use <br><span class="em">Robust, Powerful & Scalable</span></h2>
+							<div class="ux-carousel clients-carousel ux-theme">
+								<div>
+									<a href="javascript:void(0);" title="Client Name">
+										<img src="img/technologies/1.png" alt="Image 1">
+									</a>
+								</div>
+								<div>
+									<a href="javascript:void(0);" title="Client Name">
+										<img src="img/technologies/2.png" alt="Image 1">
+									</a>
+								</div>
+								<div>
+									<a href="javascript:void(0);" title="Client Name">
+										<img src="img/technologies/3.png" alt="Image 1">
+									</a>
+								</div>
+								<div>
+									<a href="javascript:void(0);" title="Client Name">
+										<img src="img/technologies/4.png" alt="Image 1">
+									</a>
+								</div>
+								<div>
+									<a href="javascript:void(0);" title="Client Name">
+										<img src="img/technologies/5.png" alt="Image 1">
+									</a>
+								</div>
+								<div>
+									<a href="javascript:void(0);" title="Client Name">
+										<img src="img/technologies/6.png" alt="Image 1">
+									</a>
+								</div>
+								<div>
+									<a href="javascript:void(0);" title="Client Name">
+										<img src="img/technologies/7.png" alt="Image 1">
+									</a>
+								</div>
+								<div>
+									<a href="javascript:void(0);" title="Client Name">
+										<img src="img/technologies/8.png" alt="Image 1">
+									</a>
+								</div>
+								<div>
+									<a href="javascript:void(0);" title="Client Name">
+										<img src="img/technologies/9.png" alt="Image 1">
+									</a>
+								</div>
+								<div>
+									<a href="javascript:void(0);" title="Client Name">
+										<img src="img/technologies/10.png" alt="Image 1">
+									</a>
+								</div>
+								<div>
+									<a href="javascript:void(0);" title="Client Name">
+										<img src="img/technologies/11.png" alt="Image 1">
+									</a>
+								</div>
+								<div>
+									<a href="javascript:void(0);" title="Client Name">
+										<img src="img/technologies/12.png" alt="Image 1">
+									</a>
+								</div><div>
+									<a href="javascript:void(0);" title="Client Name">
+										<img src="img/technologies/13.png" alt="Image 1">
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+									
+				</div>
+			</div>
+			<!-- End technologies -->			
+			
+			<!-- cta box START -->
+			<div class="section gray-bg no-padding">
+				<div class="cta-box">
+					<span class="cta-text">Receive your online quote now</span>
+					<a class="btn btn-primary ux-btn btn-rounded"><span>Start here</span><i class="ti-arrow-right"></i></a>
+				</div>
+			</div>
+			<!-- cta box END -->
+		</div>
+		<!-- page content END -->
+		
+		
+		<!-- page footer START -->
+		<footer class="ux-footer">
+			<div class="container ft-widgets">
+				<div class="row">
+					<div class="col-md-3 col-sm-4 col-xs-6 xxs-block">
+						<div class="ux-widget">
+							<h5 class="widget-title">Get in Touch</h5>
+							<address>
+								<strong>Dream Arts</strong><br>
+								PO Box 1234<br>
+								Mississauga, ON L4R 5G8, Canada<br>
+								<abbr title="Phone">P:</abbr> +1 (647) 645-7890
+							</address>
+							<address>
+								<a href="mailto:enquiries@dreamarts.ca">enquiries@dreamarts.ca</a>
+							</address>
+							<p class="em no-margin">We are available Monday to Friday: <br> 09:00am - 06:00pm</p>
+						</div>
+					</div>
+					<div class="col-md-2 col-sm-4 col-xs-6 hidden-xs">
+						<div class="ux-widget">
+							<h5 class="widget-title">Company</h5>
+							<ul class="list-unstyled">
+								<li><a href="about.html" title="About Us">About Us</a></li>
+								<li><a href="javascript:void(0);" title="Why UX?">The Mission</a></li>
+								<li><a href="javascript:void(0);" title="Culture at UX">Vision</a></li>
+								<li><a href="portfolio.html" title="Portfolio">Values</a></li>
+								<li><a href="javascript:void(0);" title="Our Clients">Work</a></li>
+								<li><a href="javascript:void(0);" title="Frequently Asked Questions">FAQ</a></li>
+								<li><a href="javascript:void(0);" title="Privacy Policy">Privacy Policy</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-4 col-xs-6 visible-lg visible-md">
+						<div class="ux-widget">
+							<h5 class="widget-title">Services</h5>
+							<ul class="list-unstyled">
+								<li><a href="javascript:void(0);" title="Web Design &amp; Front End">Web Design &amp; Front End</a></li>
+								<li><a href="javascript:void(0);" title="Responsive THML5 Templates">Responsive THML5 Templates</a></li>
+								<li><a href="javascript:void(0);" title="Custom WordPress Themes">Custom WordPress Themes</a></li>
+								<li><a href="javascript:void(0);" title="Search Engine Optimization">Search Engine Optimization</a></li>
+								<li><a href="javascript:void(0);" title="Android Development">Android Development</a></li>
+								<li><a href="javascript:void(0);" title="Social Media Marketing">Social Media Marketing</a></li>
+								<li><a href="javascript:void(0);" title="Front End Optimization">Front End Optimization</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-4 col-sm-4 col-xs-6 xxs-block">
+						<div class="ux-widget">
+							<h5 class="widget-title">Newsletter</h5>
+							<p>Subscribe to get updates right in your inbox. We promise to not send you spams.</p>
+							<form class="subscription-form" role="form" id="mailchimp">
+								<input class="form-control" type="email" name="subscriber-email" id="subscriber-email" placeholder="Enter email..." required />
+								<button class="btn btn-primary btn-rounded btn-sm" name="submit" type="submit" value="Submit">Subscribe</button>
+									
+								<!-- success and error messages -->
+								<div class="subscription-success text-success"></div>
+								<div class="subscription-error text-danger"></div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container ft-btm-bar">
+				<div class="row">
+					<div class="col-sm-6">
+						<h5 class="no-margin">&nbsp;</h5>
+						<p>Copyright &copy; Dream Arts <script type="text/javascript">var year = new Date();document.write(year.getFullYear());</script>. All rights reserved.</p>
+					</div>
+					<div class="col-sm-6">
+						<div class="social-links text-right">
+							<ul>
+								<li><a class="facebook" href="javascript:void(0);" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+								<li><a class="twitter" href="javascript:void(0);" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+								<li><a class="linkedin" href="javascript:void(0);" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+								<li><a class="pinterest" href="javascript:void(0);" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+								<li><a class="skype" href="javascript:void(0);" title="Skype"><i class="fa fa-skype"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- page footer END -->
+	
+	
+		<!-- sidebar offcanvas START -->
+		<div class="sidebar-offcanvas">
+		
+				<!-- animated close button -->
+				<a class="nav-toggle close-it" href="javascript:void(0)" title="Close It" data-toggle="offcanvas">
+					<span class="bars-wrapper">
+						<span class="first bar"></span>
+						<span class="second bar"></span>
+						<span class="third bar"></span>
+					</span>
+				</a>
+				
+			<div class="scroll-bar-wrapper">				
+				<!-- logo -->
+				<a class="logo" href="#"><img src="img/logo.png" width="78" alt="Dream Arts"></a>
+				<p>We are a team of experts dedicated to providing the best possible service to our clients. We bring technical, creative & strategic expertise to every project we undertake.</p>
+				<p>Our clients choose us because we deliver for them; Creatively, strategically, functionally and commercially.</p>
+				<ul class="list-unstyled">
+				  <li><a href="about-us.html" title="Our Work">Our Work</a></li>
+				  <li><a href="team.html" title="About Our Team">Our Philosophy</a></li>
+				  <li><a href="hiring.html" title="We are Hiring">Things We Do 4 Fun</a></li>
+				  <li><a href="about-us-alt.html" title="Why Choose Us?">Why Choose Us?</a></li>
+				</ul>
+				
+				<hr>
+				
+				<address>
+					<strong>Get in Touch</strong><br>
+					<abbr title="Phone">P:</abbr> 1800 456-7890<br>
+					<abbr title="Phone">P:</abbr> (438) 929-0000 (Quebec)<br>
+				</address>
+				
+				<address>
+					<p><strong>Enquiries</strong><br>
+					<a href="mailto:#">enquiries@dreamarts.ca</a></p>
+					<p><strong>Support</strong><br>
+					<a href="mailto:#">support@dreamarts.ca</a></p>
+				</address>
+				
+				<div class="social-links text-center">
+					<ul>
+						<li><a class="facebook" href="javascript:void(0);" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+						<li><a class="twitter" href="javascript:void(0);" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+						<li><a class="pinterest" href="javascript:void(0);" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>					
+						<li><a class="dribbble" href="javascript:void(0);" title="Dribbble"><i class="fa fa-dribbble"></i></a></li>
+						<li><a class="reddit" href="javascript:void(0);" title="Reddit"><i class="fa fa-reddit-alien"></i></a></li>
+					</ul>
+				</div>
+				
+				<hr>
+				
+				<p>&copy; Dream Arts
+				<script type="text/javascript"> var year = new Date(); document.write(year.getFullYear());</script>
+					. All rights reserved.
+				</p>
+				
+			</div>
+		</div>
+		<!-- sidebar offcanvas END -->
+		
+		
+	</div>
+	<!-- body wrapper END -->
+	
+	
+	
+	<!-- search pop-up START -->
+	<div class="custom-popup search-popup">
+				
+		<!-- animated close button -->
+		<a class="nav-toggle close-it" href="javascript:void(0)" title="Close It">
+			<span class="bars-wrapper">
+				<span class="first bar"></span>
+				<span class="second bar"></span>
+				<span class="third bar"></span>
+			</span>
+		</a>
+		
+		<div class="popup-wrapper">
+			<div class="form-wrapper">
+				<form method="post">
+					<div class="form-group">
+						<input type="search" class="form-control" id="exampleInputEmail3" placeholder="Search...">
+						<span class="animated-bar"></span>
+						<button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+					</div>
+				</form>
+			</div>
+		</div>
+		
+	</div>
+	<!-- search pop-up END -->
+	<!-- shopping cart pop-up START -->
+	<div class="custom-popup cart-popup">
+				
+		<!-- animated close button -->
+		<a class="nav-toggle close-it" href="javascript:void(0)" title="Close It">
+			<span class="bars-wrapper">
+				<span class="first bar"></span>
+				<span class="second bar"></span>
+				<span class="third bar"></span>
+			</span>
+		</a>
+		
+		<div class="popup-wrapper">
+			<div class="cart-wrapper">
+				<h3 class="cart-title">Cart Summary</h3>
+				<!-- shoppin cart dropdown START -->
+				<div class="cart-items">
+					<ul>
+						<li>
+							<a href="javascript:void(0);" class="product" title="link title">
+								<img src="img/shop/p1-thumb.jpg" alt="Product One">
+							</a>
+							<h5 class="product-title">
+								<a href="javascript:void(0);" class="product" title="link title">Woocommerce CD Audio</a>
+								<small class="quantity">1 x $15.00</small>
+							</h5>
+							<a href="javascript:void(0);" class="remove-item" title="Remove from Cart"><i class="fa fa-remove"></i></a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="product" title="link title">
+								<img src="img/shop/p2-thumb.jpg" alt="Product One">
+							</a>
+							<h5 class="product-title">
+								<a href="javascript:void(0);" class="product" title="link title">Woocommerce Product Title two</a>
+								<small class="quantity">1 x $15.00</small>
+							</h5>
+							<a href="javascript:void(0);" class="remove-item" title="Remove from Cart"><i class="fa fa-remove"></i></a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="product" title="link title">
+								<img src="img/shop/p3-thumb.jpg" alt="Product One">
+							</a>
+							<h5 class="product-title">
+								<a href="javascript:void(0);" class="product" title="link title">Another Product Title Here</a>
+								<small class="quantity">1 x $15.00</small>
+							</h5>
+							<a href="javascript:void(0);" class="remove-item" title="Remove from Cart"><i class="fa fa-remove"></i></a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="product" title="link title">
+								<img src="img/shop/p1-thumb.jpg" alt="Product One">
+							</a>
+							<h5 class="product-title">
+								<a href="javascript:void(0);" class="product" title="link title">This is a Product Title</a>
+								<small class="quantity">1 x $15.00</small>
+							</h5>
+							<a href="javascript:void(0);" class="remove-item" title="Remove from Cart"><i class="fa fa-remove"></i></a>
+						</li>
+						<li>
+							<a href="javascript:void(0);" class="product" title="link title">
+								<img src="img/shop/p2-thumb.jpg" alt="Product One">
+							</a>
+							<h5 class="product-title">
+								<a href="javascript:void(0);" class="product" title="link title">Menu Item One</a>
+								<small class="quantity">1 x $15.00</small>
+							</h5>
+							<a href="javascript:void(0);" class="remove-item" title="Remove from Cart"><i class="fa fa-remove"></i></a>
+						</li>
+					</ul>
+				</div>
+				<div class="container-fluid cart-controls">
+					<div class="row">
+						<div class="col-xs-6 xxs-block">
+							<div class="sub-total">Subtotal: <span>$345.00</span></div>
+						</div>
+						<div class="col-xs-6 xxs-block">
+							<a href="javascript:void(0);" class="btn btn-primary btn-sm hidden-sm btn-rounded hidden-xs" title="View Cart">View Cart</a>
+							<a href="javascript:void(0);" class="btn btn-success btn-sm btn-rounded" title="Checkout">Checkout</a>
+						</div>
+					</div>
+				</div>
+				<!-- shoppin cart dropdown END -->
+			</div>
+		</div>
+		
+	</div>
+	<!-- shopping cart pop-up END -->
+		
+	
+	<a href="#0" class="go-top"><i class="fa fa-angle-up"></i></a>
+    <script>/*
+        $(document).ready(function(){			
+            //closes main menu on menu item click
+            //NOTE: use it only on single page navigation
+            $('.navbar-collapse ul li a').click(function() {
+                $('.navbar-toggle:visible').click();
+            });			
+        });*/
+	</script>
+	<!-- Portfolio init function -->
+	<script type="text/javascript">
+		$(document).ready( function() {
+			 $('#portfolio-wrapper').cubeportfolio({
+				// options
+				layoutMode: 'slider',
+				drag: true,
+				auto: true,
+				autoTimeout: 5000,
+				autoPauseOnHover: true,
+				showNavigation: false,
+				showPagination: false,
+				rewindNav: false,
+				scrollByPage: false,
+				caption: 'fadeIn',
+				gapHorizontal: 0,
+				gapVertical: 0,
+				gridAdjustment: 'responsive',
+				mediaQueries: [{
+					width: 1500,
+					cols: 6
+				}, {
+					width: 1100,
+					cols: 4
+				}, {
+					width: 800,
+					cols: 3
+				}, {
+					width: 480,
+					cols: 2
+				}, {
+					width: 320,
+					cols: 1
+				}],
+				displayType: 'sequentially',
+				displayTypeSpeed: 80
+			 });
+		});
+	</script>
+{% endblock %}
+
+{% block javascript %}{% endblock %}
